@@ -1,101 +1,119 @@
-[![Supported Python Versions](https://img.shields.io/pypi/pyversions/vaex-core)](https://pypi.org/project/vaex-core/)
-[![Documentation](https://readthedocs.org/projects/vaex/badge/?version=latest)](https://docs.vaex.io)
-[![Slack](https://img.shields.io/badge/slack-chat-green.svg)](https://join.slack.com/t/vaexio/shared_invite/zt-shhxzf5i-Cf5n2LtkoYgUjOjbB3bGQQ)
-
-# What is Vaex?
-
-Vaex is a high performance Python library for lazy **Out-of-Core DataFrames**
-(similar to Pandas), to visualize and explore big tabular datasets. It
-calculates *statistics* such as mean, sum, count, standard deviation etc, on an
-*N-dimensional grid* for more than **a billion** (`10^9`) samples/rows **per
-second**. Visualization is done using **histograms**, **density plots** and **3d
-volume rendering**, allowing interactive exploration of big data. Vaex uses
-memory mapping, zero memory copy policy and lazy computations for best
-performance (no memory wasted).
-
-# Installing
-With pip:
-```
-$ pip install vaex
-```
-Or conda:
-```
-$ conda install -c conda-forge vaex
-```
-
-[For more details, see the documentation](https://docs.vaex.io/en/latest/installing.html)
-
-# Key features
-## Instant opening of Huge data files (memory mapping)
-[HDF5](https://en.wikipedia.org/wiki/Hierarchical_Data_Format) and [Apache Arrow](https://arrow.apache.org/) supported.
-
-![opening1a](https://user-images.githubusercontent.com/1765949/82818563-31c1e200-9e9f-11ea-9ee0-0a8c1994cdc9.png)
-
-
-![opening1b](https://user-images.githubusercontent.com/1765949/82820352-49e73080-9ea2-11ea-9153-d73aa399d329.png)
-
-[Read the documentation on how to efficiently convert your data](https://docs.vaex.io/en/latest/example_io.html) from CSV files, Pandas DataFrames, or other sources.
-
-
-Lazy streaming from S3 supported in combination with memory mapping.
-
-![opening1c](https://user-images.githubusercontent.com/1765949/82820516-a21e3280-9ea2-11ea-948b-07df26c4b5d3.png)
-
-
-## Expression system
-Don't waste memory or time with feature engineering, we (lazily) transform your data when needed.
-
-
-![expression](https://user-images.githubusercontent.com/1765949/82818733-70f03300-9e9f-11ea-80b0-ab28e7950b5c.png)
-
-
-
-## Out-of-core DataFrame
-Filtering and evaluating expressions will not waste memory by making copies; the data is kept untouched on disk, and will be streamed only when needed. Delay the time before you need a cluster.
-
-
-![occ-animated](https://user-images.githubusercontent.com/1765949/82821111-c6c6da00-9ea3-11ea-9f9e-498de8133cc2.gif)
-
-## Fast groupby / aggregations
-Vaex implements parallelized, highly performant `groupby` operations, especially when using categories (>1 billion/second).
-
-
-![groupby](https://user-images.githubusercontent.com/1765949/82818807-97ae6980-9e9f-11ea-8820-41dd4441057a.png)
-
-
-## Fast and efficient join
-Vaex doesn't copy/materialize the 'right' table when joining, saving gigabytes of memory. With subsecond joining on a billion rows, it's pretty fast!
-
-![join](https://user-images.githubusercontent.com/1765949/82818840-a268fe80-9e9f-11ea-8ba2-6a6d52c4af88.png)
-
-## More features
-
- * Remote DataFrames (documentation coming soon)
- * Integration into [Jupyter and Voila for interactive notebooks and dashboards](https://vaex.readthedocs.io/en/latest/tutorial_jupyter.html)
- * [Machine Learning without (explicit) pipelines](https://vaex.readthedocs.io/en/latest/tutorial_ml.html)
-
-
-## Contributing
-
-See [contributing](CONTRIBUTING.md) page.
-
-## Slack
-
-Join the discussion in our [Slack](https://join.slack.com/t/vaexio/shared_invite/zt-shhxzf5i-Cf5n2LtkoYgUjOjbB3bGQQ) channel!
-
-# Learn more about Vaex
- * Articles
-   * [Beyond Pandas: Spark, Dask, Vaex and other big data technologies battling head to head](https://towardsdatascience.com/beyond-pandas-spark-dask-vaex-and-other-big-data-technologies-battling-head-to-head-a453a1f8cc13) (includes benchmarks)
-   * [7 reasons why I love Vaex for data science](https://towardsdatascience.com/7-reasons-why-i-love-vaex-for-data-science-99008bc8044b) (tips and trics)
-   * [ML impossible: Train 1 billion samples in 5 minutes on your laptop using Vaex and Scikit-Learn](https://towardsdatascience.com/ml-impossible-train-a-1-billion-sample-model-in-20-minutes-with-vaex-and-scikit-learn-on-your-9e2968e6f385)
-   * [How to analyse 100 GB of data on your laptop with Python](https://towardsdatascience.com/how-to-analyse-100s-of-gbs-of-data-on-your-laptop-with-python-f83363dda94)
-   * [Flying high with Vaex: analysis of over 30 years of flight data in Python](https://towardsdatascience.com/https-medium-com-jovan-veljanoski-flying-high-with-vaex-analysis-of-over-30-years-of-flight-data-in-python-b224825a6d56)
-   * [Vaex: A DataFrame with super strings - Speed up your text processing up to a 1000x
-](https://towardsdatascience.com/vaex-a-dataframe-with-super-strings-789b92e8d861)
-   * [Vaex: Out of Core Dataframes for Python and Fast Visualization - 1 billion row datasets on your laptop](https://towardsdatascience.com/vaex-out-of-core-dataframes-for-python-and-fast-visualization-12c102db044a)
-
- * [Follow our tutorials](https://docs.vaex.io/en/latest/tutorials.html)
- * Watch our more recent talks:
-   * [PyData London 2019](https://www.youtube.com/watch?v=2Tt0i823-ec)
-   * [SciPy 2019](https://www.youtube.com/watch?v=ELtjRdPT8is)
- * Contact us for data science solutions, training, or enterprise support at https://vaex.io/
+<div class="Box-sc-g0xbh4-0 QkQOb js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><p dir="auto"><a href="https://pypi.org/project/vaex-core/" rel="nofollow"><img src="https://camo.githubusercontent.com/7591eb99e80853366de25204d7afe7844bd3fc47810f09a4f34f2ef37ac8b15f/68747470733a2f2f696d672e736869656c64732e696f2f707970692f707976657273696f6e732f766165782d636f7265" alt="支持的 Python 版本" data-canonical-src="https://img.shields.io/pypi/pyversions/vaex-core" style="max-width: 100%;" _mstalt="579215" _msthash="314"></a>
+<a href="https://docs.vaex.io" rel="nofollow"><img src="https://camo.githubusercontent.com/c85d6505951e213fc17e2d06f448e0e428a5b2409d1fa42fb349095ff39468bd/68747470733a2f2f72656164746865646f63732e6f72672f70726f6a656374732f766165782f62616467652f3f76657273696f6e3d6c6174657374" alt="文档" data-canonical-src="https://readthedocs.org/projects/vaex/badge/?version=latest" style="max-width: 100%;" _mstalt="234962" _msthash="315"></a>
+<a href="https://join.slack.com/t/vaexio/shared_invite/zt-shhxzf5i-Cf5n2LtkoYgUjOjbB3bGQQ" rel="nofollow"><img src="https://camo.githubusercontent.com/838d7f064e7b2154b0fb15f0f37415f73eee91d5eb61d41c2e495af251c56f0a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f736c61636b2d636861742d677265656e2e737667" alt="松弛" data-canonical-src="https://img.shields.io/badge/slack-chat-green.svg" style="max-width: 100%;" _mstalt="58305" _msthash="316"></a></p>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto" _msttexthash="18927012" _msthash="317">什么是 Vaex？</h1><a id="user-content-what-is-vaex" class="anchor" aria-label="永久链接：什么是 Vaex？" href="#what-is-vaex" _mstaria-label="457418" _msthash="318"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font _mstmutation="1" _msttexthash="5107684517" _msthash="319">Vaex 是一个高性能 Python 库，用于惰性<strong _mstmutation="1" _istranslated="1">核外数据帧</strong>（类似于 Pandas），用于可视化和探索大型表格数据集。它
+在 <em _mstmutation="1" _istranslated="1">N 维网格</em>上计算超过 <strong _mstmutation="1" _istranslated="1">10 亿</strong>个 （） 样本/行的<em _mstmutation="1" _istranslated="1">统计数据</em>，<strong _mstmutation="1" _istranslated="1">例如平均值、总和、计数、标准差等
+第二</strong>。使用<strong _mstmutation="1" _istranslated="1">直方图</strong>、<strong _mstmutation="1" _istranslated="1">密度图</strong>和 3D 实现可视化<strong _mstmutation="1" _istranslated="1">
+体积渲染</strong>，允许交互式探索大数据。Vaex 使用
+内存映射、零内存复制策略和惰性计算是最好的
+性能（不浪费内存）。</font><code>10^9</code></p>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto" _msttexthash="5773755" _msthash="320">安装</h1><a id="user-content-installing" class="anchor" aria-label="永久链接：安装" href="#installing" _mstaria-label="440128" _msthash="321"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="15201615" _msthash="322">使用 pip：</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>$ pip install vaex
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="$ pip install vaex" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto" _msttexthash="17652830" _msthash="323">或者 conda：</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>$ conda install -c conda-forge vaex
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="$ conda install -c conda-forge vaex" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><a href="https://docs.vaex.io/en/latest/installing.html" rel="nofollow" _msttexthash="76028901" _msthash="324">有关更多详细信息，请参阅文档</a></p>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto" _msttexthash="12663456" _msthash="325">主要特点</h1><a id="user-content-key-features" class="anchor" aria-label="永久链接：主要特点" href="#key-features" _mstaria-label="481377" _msthash="326"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="95134650" _msthash="327">即时打开大量数据文件（内存映射）</h2><a id="user-content-instant-opening-of-huge-data-files-memory-mapping" class="anchor" aria-label="永久链接：即时打开大量数据文件（内存映射）" href="#instant-opening-of-huge-data-files-memory-mapping" _mstaria-label="2398734" _msthash="328"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="12956632" _msthash="329">支持 <a href="https://en.wikipedia.org/wiki/Hierarchical_Data_Format" rel="nofollow" _istranslated="1">HDF5</a> 和 <a href="https://arrow.apache.org/" rel="nofollow" _istranslated="1">Apache Arrow</a>。</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/1765949/82818563-31c1e200-9e9f-11ea-9ee0-0a8c1994cdc9.png"><img src="https://user-images.githubusercontent.com/1765949/82818563-31c1e200-9e9f-11ea-9ee0-0a8c1994cdc9.png" alt="开场1A" style="max-width: 100%;" _mstalt="125281" _msthash="330"></a></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/1765949/82820352-49e73080-9ea2-11ea-9153-d73aa399d329.png"><img src="https://user-images.githubusercontent.com/1765949/82820352-49e73080-9ea2-11ea-9153-d73aa399d329.png" alt="开仓1b" style="max-width: 100%;" _mstalt="125476" _msthash="331"></a></p>
+<p dir="auto" _msttexthash="257429757" _msthash="332">阅读有关如何从 CSV 文件、Pandas DataFrames 或其他来源<a href="https://docs.vaex.io/en/latest/example_io.html" rel="nofollow" _istranslated="1">高效转换数据的文档</a>。</p>
+<p dir="auto" _msttexthash="129468664" _msthash="333">支持从 S3 进行延迟流式处理，并结合内存映射。</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/1765949/82820516-a21e3280-9ea2-11ea-948b-07df26c4b5d3.png"><img src="https://user-images.githubusercontent.com/1765949/82820516-a21e3280-9ea2-11ea-948b-07df26c4b5d3.png" alt="开场 1c" style="max-width: 100%;" _mstalt="125671" _msthash="334"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="14970397" _msthash="335">表达系统</h2><a id="user-content-expression-system" class="anchor" aria-label="永久链接： Expression system" href="#expression-system" _mstaria-label="707252" _msthash="336"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="330189405" _msthash="337">不要在特征工程上浪费内存或时间，我们会在需要时（懒惰地）转换您的数据。</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/1765949/82818733-70f03300-9e9f-11ea-80b0-ab28e7950b5c.png"><img src="https://user-images.githubusercontent.com/1765949/82818733-70f03300-9e9f-11ea-80b0-ab28e7950b5c.png" alt="表达" style="max-width: 100%;" _mstalt="165048" _msthash="338"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="4948476" _msthash="339">核外 DataFrame</h2><a id="user-content-out-of-core-dataframe" class="anchor" aria-label="永久链接：核外 DataFrame" href="#out-of-core-dataframe" _mstaria-label="809185" _msthash="340"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="734072222" _msthash="341">筛选和评估表达式不会因创建副本而浪费内存;数据在磁盘上保持不变，并且仅在需要时进行流式传输。在需要集群之前延迟时间。</p>
+<p dir="auto"><animated-image data-catalyst=""><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/1765949/82821111-c6c6da00-9ea3-11ea-9f9e-498de8133cc2.gif" data-target="animated-image.originalLink"><img src="https://user-images.githubusercontent.com/1765949/82821111-c6c6da00-9ea3-11ea-9f9e-498de8133cc2.gif" alt="OCC 动画" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage" _mstalt="195208" _msthash="342"></a>
+      <span class="AnimatedImagePlayer" data-target="animated-image.player" hidden="" _msthidden="4">
+        <a data-target="animated-image.replacedLink" class="AnimatedImagePlayer-images" href="https://user-images.githubusercontent.com/1765949/82821111-c6c6da00-9ea3-11ea-9f9e-498de8133cc2.gif" target="_blank" _msthidden="1">
+          
+        <span data-target="animated-image.imageContainer" _msthidden="1">
+            <img data-target="animated-image.replacedImage" alt="occ-animated" class="AnimatedImagePlayer-animatedImage" src="https://user-images.githubusercontent.com/1765949/82821111-c6c6da00-9ea3-11ea-9f9e-498de8133cc2.gif" _msthidden="A" _mstalt="195208" _msthash="343" style="display: block; opacity: 1;">
+          <canvas class="AnimatedImagePlayer-stillImage" aria-hidden="true" width="807" height="246"></canvas></span></a>
+        <button data-target="animated-image.imageButton" class="AnimatedImagePlayer-images" tabindex="-1" aria-label="Play occ-animated" hidden="" _msthidden="A" _mstaria-label="302627" _msthash="344"></button>
+        <span class="AnimatedImagePlayer-controls" data-target="animated-image.controls" hidden="" _msthidden="2">
+          <button data-target="animated-image.playButton" class="AnimatedImagePlayer-button" aria-label="Play occ-animated" _msthidden="A" _mstaria-label="302627" _msthash="345">
+            <svg aria-hidden="true" focusable="false" class="octicon icon-play" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 13.5427V2.45734C4 1.82607 4.69692 1.4435 5.2295 1.78241L13.9394 7.32507C14.4334 7.63943 14.4334 8.36057 13.9394 8.67493L5.2295 14.2176C4.69692 14.5565 4 14.1739 4 13.5427Z">
+            </path></svg>
+            <svg aria-hidden="true" focusable="false" class="octicon icon-pause" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="2" width="3" height="12" rx="1"></rect>
+              <rect x="9" y="2" width="3" height="12" rx="1"></rect>
+            </svg>
+          </button>
+          <a data-target="animated-image.openButton" aria-label="Open occ-animated in new window" class="AnimatedImagePlayer-button" href="https://user-images.githubusercontent.com/1765949/82821111-c6c6da00-9ea3-11ea-9f9e-498de8133cc2.gif" target="_blank" _msthidden="A" _mstaria-label="742690" _msthash="346">
+            <svg aria-hidden="true" class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+              <path fill-rule="evenodd" d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1zM3.75 2A1.75 1.75 0 002 3.75v8.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 12.25v-3.5a.75.75 0 00-1.5 0v3.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h3.5a.75.75 0 000-1.5h-3.5z"></path>
+            </svg>
+          </a>
+        </span>
+      </span></animated-image></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="18498142" _msthash="347">快速 groupby / 聚合</h2><a id="user-content-fast-groupby--aggregations" class="anchor" aria-label="永久链接：快速 groupby / 聚合" href="#fast-groupby--aggregations" _mstaria-label="1076816" _msthash="348"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font _mstmutation="1" _msttexthash="276976440" _msthash="349">Vaex 实现了并行化、高性能的操作，尤其是在使用类别（&gt;10 亿/秒）时。</font><code>groupby</code></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/1765949/82818807-97ae6980-9e9f-11ea-8820-41dd4441057a.png"><img src="https://user-images.githubusercontent.com/1765949/82818807-97ae6980-9e9f-11ea-8820-41dd4441057a.png" alt="groupby" style="max-width: 100%;" _mstalt="101179" _msthash="350"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="25239890" _msthash="351">快速高效的加入</h2><a id="user-content-fast-and-efficient-join" class="anchor" aria-label="永久链接：快速高效的加入" href="#fast-and-efficient-join" _mstaria-label="868660" _msthash="352"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="500588270" _msthash="353">Vaex 在加入时不会复制/具体化“正确”表，从而节省数 GB 的内存。亚秒级加入 10 亿行，速度非常快！</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/1765949/82818840-a268fe80-9e9f-11ea-8ba2-6a6d52c4af88.png"><img src="https://user-images.githubusercontent.com/1765949/82818840-a268fe80-9e9f-11ea-8ba2-6a6d52c4af88.png" alt="加入" style="max-width: 100%;" _mstalt="47775" _msthash="354"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="11538033" _msthash="355">更多功能</h2><a id="user-content-more-features" class="anchor" aria-label="永久链接：更多功能" href="#more-features" _mstaria-label="519909" _msthash="356"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li _msttexthash="86957013" _msthash="357">远程 DataFrames（文档即将推出）</li>
+<li _msttexthash="164280402" _msthash="358">集成到 <a href="https://vaex.readthedocs.io/en/latest/tutorial_jupyter.html" rel="nofollow" _istranslated="1">Jupyter 和 Voila 中，用于交互式笔记本和仪表板</a></li>
+<li><a href="https://vaex.readthedocs.io/en/latest/tutorial_ml.html" rel="nofollow" _msttexthash="68785535" _msthash="359">没有（显式）管道的机器学习</a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="6354283" _msthash="360">贡献</h2><a id="user-content-contributing" class="anchor" aria-label="永久链接： 贡献" href="#contributing" _mstaria-label="521066" _msthash="361"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="27382836" _msthash="362">参见 <a href="/vaexio/vaex/blob/master/CONTRIBUTING.md" _istranslated="1">贡献</a> 页面。</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="4943042" _msthash="363">松弛</h2><a id="user-content-slack" class="anchor" aria-label="永久链接：Slack" href="#slack" _mstaria-label="269230" _msthash="364"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="83703061" _msthash="365">加入我们的 <a href="https://join.slack.com/t/vaexio/shared_invite/zt-shhxzf5i-Cf5n2LtkoYgUjOjbB3bGQQ" rel="nofollow" _istranslated="1">Slack</a> 频道中的讨论！</p>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto" _msttexthash="38685569" _msthash="366">了解有关 Vaex 的更多信息</h1><a id="user-content-learn-more-about-vaex" class="anchor" aria-label="永久链接：了解有关 Vaex 的更多信息" href="#learn-more-about-vaex" _mstaria-label="771836" _msthash="367"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li>
+<p dir="auto" _msttexthash="5636605" _msthash="368">文章</p>
+<ul dir="auto">
+<li _msttexthash="379770014" _msthash="369"><a href="https://towardsdatascience.com/beyond-pandas-spark-dask-vaex-and-other-big-data-technologies-battling-head-to-head-a453a1f8cc13" rel="nofollow" _istranslated="1">Beyond Pandas：Spark、Dask、Vaex 和其他大数据技术正面交</a>锋（包括基准测试）</li>
+<li _msttexthash="142917385" _msthash="370"><a href="https://towardsdatascience.com/7-reasons-why-i-love-vaex-for-data-science-99008bc8044b" rel="nofollow" _istranslated="1">我喜欢 Vaex 数据科学的 7 个理由</a>（技巧和技巧）</li>
+<li><a href="https://towardsdatascience.com/ml-impossible-train-a-1-billion-sample-model-in-20-minutes-with-vaex-and-scikit-learn-on-your-9e2968e6f385" rel="nofollow" _msttexthash="265390983" _msthash="371">ML 不可能：使用 Vaex 和 Scikit-Learn 在笔记本电脑上 5 分钟内训练 10 亿个样本</a></li>
+<li><a href="https://towardsdatascience.com/how-to-analyse-100s-of-gbs-of-data-on-your-laptop-with-python-f83363dda94" rel="nofollow" _msttexthash="101437310" _msthash="372">如何使用 Python 分析笔记本电脑上的 100 GB 数据</a></li>
+<li><a href="https://towardsdatascience.com/https-medium-com-jovan-veljanoski-flying-high-with-vaex-analysis-of-over-30-years-of-flight-data-in-python-b224825a6d56" rel="nofollow" _msttexthash="150996404" _msthash="373">使用 Vaex 飞得更高：Python 中 30 多年的飞行数据分析</a></li>
+<li><a href="https://towardsdatascience.com/vaex-a-dataframe-with-super-strings-789b92e8d861" rel="nofollow" _msttexthash="179420891" _msthash="374">Vaex：具有超级字符串的 DataFrame - 将文本处理速度提高 1000 倍</a></li>
+<li><a href="https://towardsdatascience.com/vaex-out-of-core-dataframes-for-python-and-fast-visualization-12c102db044a" rel="nofollow" _msttexthash="320032050" _msthash="375">Vaex：用于 Python 和快速可视化的 Out of Core Dataframes - 笔记本电脑上的 10 亿行数据集</a></li>
+</ul>
+</li>
+<li>
+<p dir="auto"><a href="https://docs.vaex.io/en/latest/tutorials.html" rel="nofollow" _msttexthash="25142143" _msthash="376">遵循我们的教程</a></p>
+</li>
+<li>
+<p dir="auto" _msttexthash="51401324" _msthash="377">观看我们最近的讲座：</p>
+<ul dir="auto">
+<li><a href="https://www.youtube.com/watch?v=2Tt0i823-ec" rel="nofollow" _msttexthash="8264685" _msthash="378">PyData 伦敦 2019</a></li>
+<li><a href="https://www.youtube.com/watch?v=ELtjRdPT8is" rel="nofollow" _msttexthash="5329610" _msthash="379">科学Py 2019</a></li>
+</ul>
+</li>
+<li>
+<p dir="auto" _msttexthash="235988285" _msthash="380">联系我们以获取 <a href="https://vaex.io/" rel="nofollow" _istranslated="1">https://vaex.io/</a> 的数据科学解决方案、培训或企业支持</p>
+</li>
+</ul>
+</article></div>
